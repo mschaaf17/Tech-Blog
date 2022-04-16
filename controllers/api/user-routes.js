@@ -14,4 +14,7 @@ router.get('/', (req, res) => {
     })
 })
 
+
+//in the router.post('/') use the .then from 14.2.5
+
 module.exports = router
