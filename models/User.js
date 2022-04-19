@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize')
-//bcyrpt for password
+const bcrypt = require('bcrypt')
 const sequelize = require('../config/connection')
 
 //create user model
@@ -26,17 +26,27 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
+                //password must be at least 4 characters long
                 len: [4]
             }
         }
 
     },
     {
-    //hooks for password
+     hooks: {
+        async beforeCreate(newUserData) {
+            newUserData.password = await bcrypt.hash(newUserData.password, 10)
+            return newUserData
+        },
+        async beforeUpdate(updatedUserData) {
+            updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10)
+            return updatedUserData
+        }
+     },
     sequelize,
     //check if you need only created_at
     timestamps: true,
-    underscore: true,
+    underscored: true,
     modelName: 'user'
     }
     )

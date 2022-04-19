@@ -35,12 +35,12 @@ app.use(express.json())
 //middleware this allows you to use req.body does this need to be false or true?
 app.use(express.urlencoded({ extended: false }))
 //use code from the public folder
-//app.use(express.static(path.join(_dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')))
 
 //use the routes
 app.use(require('./controllers'))
 
 
-sequelize.sync({ force: true }).then(()=> {
+sequelize.sync({ force: false }).then(()=> {
     app.listen(PORT, () => console.log('Now listening'))
 })

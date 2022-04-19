@@ -2,16 +2,17 @@ const router = require('express').Router()
 const { Comment, User, Post }= require('../../models')
 
 router.get('/', (req, res) => {
-    Comment.findAll({
-        include: [
-            {
-                model: User
-            },
-            {
-                model: Post
-            }
-        ]
-    })
+    console.log('comment route is running')
+    Comment.findAll()
+    //     include: [
+    //         {
+    //             model: User
+    //         },
+    //         {
+    //             model: Post
+    //         }
+    //     ]
+    // })
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
         console.log(err)

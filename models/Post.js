@@ -14,14 +14,14 @@ Post.init(
         title: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        //post_url?
-            user_id: {
-                type: DataTypes.STRING,
-                references: {
-                    model: 'user',
-                    key: 'id'
-                }
+        // },
+        // //post_url?
+        //     user_id: {
+        //         type: DataTypes.STRING,
+        //         references: {
+        //             model: 'user',
+        //             key: 'id'
+        //         }
             }
         },
         {
