@@ -60,8 +60,8 @@ router.post('/', (req, res) => {
 })
 
 
-//put route not working!
-router.put('/id:', (req, res) => {
+
+router.put('/:id', (req, res) => {
     Post.update(
         {
             title: req.body.title
