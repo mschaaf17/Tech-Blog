@@ -6,7 +6,7 @@ const { User, Comment, Post } = require('../../models')
 router.get('/', (req, res) => {
     console.log('user route is running')
     User.findAll({
-     attributes: {exclude: ['password']}
+    attributes: {exclude: ['password']}
     })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
@@ -44,6 +44,26 @@ router.post('/', (req, res) => {
     .catch(err => {
         console.log(err)
         res.status(500).json(err)
+    })
+})
+
+router.post('/login', (req, res) => {
+    //post method carries the required parameters in the req.body
+    User.findOne({
+        where: {
+            username: req.body.username
+        }
+    }) .then(dbUserData => {
+        if(!dbUserData) {
+            res.status(400).json({message: 'No user with that username'})
+            return
+        }
+        const validPassword = dbUserData.checkPassword(req.body.password)
+        if(!validPassword) {
+            res.status(400).json({message: 'Incorrect password!'})
+            return
+        }
+        res.json({user: dbUserData, message: 'You are now logged in!'})
     })
 })
 
