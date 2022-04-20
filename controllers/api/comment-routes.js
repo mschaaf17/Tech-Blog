@@ -21,6 +21,25 @@ router.get('/', (req, res) => {
     })
 })
 
+// router.get('/:id', (req, res) => {
+//     console.log('comment route is running')
+//     Comment.findOne({
+//         where: {
+//             id: req.params.id
+//         }
+//     })
+//     .then(dbCommentData => {
+//    if(!dbCommentData) {
+//        res.status(404).json({message: 'No comments found with thsi id'})
+//        return
+//     }
+//     res.json(dbCommentData)
+//     .catch(err => {
+//         console.log(err)
+//         res.status(500).json(err)
+//     })
+// })
+
 router.post('/', (req, res) => {
     //check session
     Comment.create({
