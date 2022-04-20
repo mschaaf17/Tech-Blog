@@ -47,6 +47,7 @@ User.init(
     sequelize,
     //check if you need only created_at
     timestamps: true,
+    freezeTableName: true,
     underscored: true,
     modelName: 'user'
     }
