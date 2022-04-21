@@ -1,12 +1,12 @@
  <article class="post">
       <div class="title">
         <a href="{{content}}" target="_blank">{{title}}</a>
-        <span>({{content}})</span>
+        <div>{{content}}</div>
       </div>
       <div class="meta">
         By {{user.username}} on
-        {{created_at}}
+        {{format_date created_at}}
         |
-        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+        <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
       </div>
     </article>
