@@ -1,9 +1,9 @@
 async function loginFormHandler(event) {
     event.preventDefault()
 
-    const username = document.querySelector('#username-login')
-    const password = document.querySelector('#password-login')
-
+    const username = document.querySelector('#username-login').value.trim()
+    const password = document.querySelector('#password-login').value.trim()
+console.log(username, password)
     if(username && password) {
         const response = await fetch('/api/users/login', {
             method: 'post',
@@ -13,9 +13,9 @@ async function loginFormHandler(event) {
             }),
             headers: {'Content-Type': 'application/json'}
         })
-
+        const result = await response.json()
+        console.log(result)
         if(response.ok) {
-            alert('You are logged out')
             document.location.replace('/dashboard/')
         } else {
             alert(response.statusText)
@@ -40,8 +40,9 @@ async function signupFormHandler(event) {
             }),
             headers: { 'Content-Type': 'application/json'}
         })
+        const result = await response.json()
+        console.log(result)
         if (response.ok) {
-            alert('You are logged in')
             document.location.replace('/dashboard/')
         } else {
             alert(response.statusText)

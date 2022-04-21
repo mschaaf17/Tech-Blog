@@ -15,13 +15,11 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        // //post_url?13.3.4
-        post_url: {
+        // //post_url?13.3.4--this was post_url
+        content: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-              isURL: true
-            }
+            allowNull: false
+            
         },
             user_id: {
                 type: DataTypes.INTEGER,

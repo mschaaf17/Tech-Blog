@@ -57,6 +57,7 @@ router.post('/', (req, res) => {
 
 router.post('/login', (req, res) => {
     //post method carries the required parameters in the req.body
+    console.log(req.body)
     User.findOne({
         where: {
             username: req.body.username
@@ -75,10 +76,16 @@ router.post('/login', (req, res) => {
             req.session.user_id = dbUserData.id
             req.session.username =dbUserData.username
             req.session.loggedIn = true
+            res.json({user: dbUserData, message: 'You are now logged in!'})
         })
-        res.json({user: dbUserData, message: 'You are now logged in!'})
+        
+    })
+    .catch(err=> {
+        console.log(err)
+        res.status(500).json(err)
     })
 })
+
 
 router.post('/logout', (req, res) => {
     if(req.session.loggedIn) {
@@ -89,6 +96,7 @@ router.post('/logout', (req, res) => {
     else {
         res.status(404).end()
     }
+
 })
 
 router.put('/:id', (req, res) => {
