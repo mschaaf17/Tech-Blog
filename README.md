@@ -21,11 +21,11 @@ https://tech-blog-mvc1.herokuapp.com/
 
 
 ## Usage:
-To interact with other users through posts. 
-After logging in...
-The user can post their own content. 
-The user can edit and delete their post.
-The user can comment on posts.
+* To interact with other users through posts. 
+* After logging in...
+* The user can post their own content. 
+* The user can edit and delete their post.
+* The user can comment on posts.
 
 ## Installation:
 Clone the code and then run npm install. 
