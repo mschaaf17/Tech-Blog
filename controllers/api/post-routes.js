@@ -4,7 +4,6 @@ const { User, Post, Comment }= require('../../models')
 const withAuth = require('../../utils/auth')
 
 router.get('/', (req, res) => {
-    console.log('post route is running')
     Post.findAll({
         attributes: ['id', 'content', 'title', 'created_at'],
         order: [['created_at', 'DESC']],
@@ -29,6 +28,14 @@ router.get('/:id', (req, res) => {
         },
         attributes: ['id', 'content', 'title', 'created_at'],
         include: [
+            {
+                model: User,
+                attributes: ['username'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            },
             {
                 model: User,
                 attributes: ['username']

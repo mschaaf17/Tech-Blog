@@ -8,21 +8,22 @@
     margin: 0;
     font-family: sans-serif;
     color: #333;
+   
   }
   
   a {
     text-decoration: none;
-    color: #225ca3;
+    color: grey;
     font-weight: bold;
     transition: color .1s;
   }
   
   a:hover {
-    color: #3486eb;
+    color: purple;
   }
   
   button {
-    background-color: #225ca3;
+    background-color: purple;
     border: 0;
     padding: 1%;
     color: white;
@@ -33,7 +34,29 @@
   }
   
   button:hover {
-    background-color: #3486eb;
+    background-color: black;
+  }
+
+  .welcome {
+    margin: auto;
+    font-size: 50px;
+    color: white;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    border: solid 1px;
+    border-radius: 5px;
+    background-image: url("./images/background-image.jpg.crdownload");
+    background-color: purple;
+    padding: 50px;
+
+  }
+  .app-info {
+    padding-top: 15px;
+    margin: auto;
+    font-size: 18px;
+    color: gray;
+    text-align: center;
   }
   
   .post-list {
@@ -49,7 +72,7 @@
   
   textarea:focus, input:focus {
     outline: none;
-    border: 1px solid #3486eb;
+    border: 1px solid black;
   }
   
   textarea {
@@ -85,6 +108,14 @@
   header h1 {
     font-size: 1em;
   }
+
+  /* nav {
+    display: flex;
+  } */
+  nav a {
+    padding: 0, 100px;
+
+  }
   
   main {
     flex: 1;
@@ -97,7 +128,7 @@
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: #225ca3;
+    color: purple;
     font-size: 100%;
     font-weight: bold;
     transition: color .1s;
@@ -106,7 +137,7 @@
   
   .btn-no-style:hover {
     background: none;
-    color: #3486eb;
+    color: black;
   }
   
   .delete-post-btn {
@@ -122,7 +153,7 @@
     line-height: 150%;
   }
   
-  .post .title span {
+  .post .title div {
     font-style: italic;
     font-size: 90%;
     color: #7d7d7d;
@@ -133,14 +164,6 @@
     margin: -1.5% 0 2% 0;
   }
   
-  .upvote-btn {
-    background-color: #197d0f;
-    transition: background-color .1s;
-  }
-  
-  .upvote-btn:hover {
-    background-color: #1f9c13;
-  }
   
   .comment-form {
     margin-bottom: 5%;
@@ -175,4 +198,12 @@
     justify-content: center;
     padding: 1%;
     font-size: 110%;
+    background: rgba(221, 160, 221);
+    color: whitesmoke;
   }
+
+
+
+
+
+  
