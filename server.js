@@ -33,9 +33,9 @@ app.set('view engine', 'handlebars')
 
 
 app.use(express.json())
-//middleware this allows you to use req.body does this need to be false or true?
+//middleware 
 app.use(express.urlencoded({ extended: false }))
-//use code from the public folder
+//using public folder
 app.use(express.static(path.join(__dirname, 'public')))
 
 //use the routes
