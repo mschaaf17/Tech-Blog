@@ -8,23 +8,12 @@ User.hasMany(Post, {
 })
 
 Post.belongsTo(User, {
-    foreignKey: 'user_id',
- //   onDelete: 'SET NULL'
+    foreignKey: 'user_id'
 })
 
-// User.belongsToMany(Post, {
-//     foreignKey: 'user_id',
-//     onDelete: 'SET NULL'
-// })
-
-// Post.belongsToMany(User, {
-//     foreignKey: 'post_id',
-//     onDelete: 'SET NULL'
-// })
 
 Comment.belongsTo(User, {
-    foreignKey: 'user_id',
-  //  onDelete: 'SET NULL'
+    foreignKey: 'user_id'
  })
 
 Comment.belongsTo(Post, {
@@ -33,8 +22,7 @@ Comment.belongsTo(Post, {
  })
 
 User.hasMany(Comment, {
-    foreignKey: 'user_id',
-  // onDelete: 'SET NULL'
+    foreignKey: 'user_id'
 })
 
 Post.hasMany(Comment, {

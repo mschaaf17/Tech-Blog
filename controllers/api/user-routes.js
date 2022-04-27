@@ -138,6 +138,4 @@ router.delete('/:id', (req, res)=> {
 })
 
 
-//in the router.post('/') use the .then from 14.2.5
-//13.1.6 to set up post put and delete routes
 module.exports = router
